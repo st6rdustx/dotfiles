@@ -26,6 +26,8 @@ brew "zinit"
 brew "zoxide"
 brew "jandedobbeleer/oh-my-posh/oh-my-posh", link: false
 brew "oven-sh/bun/bun"
+brew "thefuck"
+
 cask "1password-cli@beta"
 cask "1password@nightly"
 cask "aldente"

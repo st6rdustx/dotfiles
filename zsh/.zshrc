@@ -1,10 +1,9 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH=$PWD/node_modules/.bin:$PATH
 export HOMEBREW_NO_ANALYTICS=1
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
   autoload -Uz compinit
   compinit
 fi
@@ -29,8 +28,6 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
-
-autoload -Uz compinit && compinit
 
 if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -76,8 +73,6 @@ docker_rm_stopped() {
   docker rm $(docker ps -a -q)
 }
 
+eval $(thefuck --alias)
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
-
-export JAVA_HOME=/Users/sky/Library/Java/JavaVirtualMachines/openjdk-23.0.2/Contents/Home
-export PATH=$JAVA_HOME/bin:$PATH
