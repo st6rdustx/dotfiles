@@ -6,17 +6,18 @@ return {
     local cmp = require "cmp"
 
     cmp.setup {
-      sources = cmp.config.sources {
+      sources = cmp.config.sources({
+        { name = "copilot", group_index = 2 },
         { name = "nvim_lsp" },
+      }, {
         { name = "buffer" },
         { name = "path" },
-      },
+      }),
       mapping = cmp.mapping.preset.insert {
-        ["<Tab>"] = cmp.mapping.select_next_item(), -- Complete with tab
-        ["<S-Tab>"] = cmp.mapping.select_prev_item(), -- Select previous item
-        ["<CR>"] = cmp.mapping.confirm { select = true }, -- Confirm completion with enter
-        ["<C-Esc>"] = cmp.mapping.close(), -- Close completion with Ctrl-esc
-        ["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion menu with Ctrl-Space
+        ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
+        ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
+        ["<C-y>"] = cmp.mapping.confirm { select = true },
+        ["<C-Space>"] = cmp.mapping.complete(),
       },
       formatting = {
         format = function(entry, vim_item)
@@ -28,6 +29,17 @@ return {
           })[entry.source.name]
           return vim_item
         end,
+      },
+    }
+
+    vim.diagnostic.config {
+      float = {
+        focusable = false,
+        style = "minimal",
+        border = "rounded",
+        source = "always",
+        header = "",
+        prefix = "",
       },
     }
   end,
