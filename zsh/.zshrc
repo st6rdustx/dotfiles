@@ -29,10 +29,6 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::command-not-found
-
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -51,8 +47,9 @@ alias p="cd ~/Developer/"
 alias dl="cd ~/Downloads/"
 alias f="open -a Finder ./"
 alias ls="eza"
-alias g="lazygit"
 alias cat="bat"
+alias g="git"
+alias weather="curl v2d.wttr.in"
 
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --ansi --preview-window=right:60% --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
