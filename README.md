@@ -11,6 +11,7 @@ This repository contains my personal dotfiles, managed with GNU Stow. These conf
 - [Neovim](https://neovim.io)
 - [Oh My Posh](https://ohmyposh.dev/)
 - [Homebrew](https://brew.sh/)
+- [GitHub CLI](https://cli.github.com)
 
 ## Installation
 
@@ -61,7 +62,8 @@ This dotfiles repository includes configurations for:
 - **git**: Git configuration (.gitconfig)
 - **brew**: Homebrew packages and settings (Brewfile)
 - **nvim**: Neovim configuration (.config/nvim)
-- **omp**: Oh My Posh theme configuration (.config/omp.yaml)
+- **oh my posh**: Oh My Posh theme configuration (.config/omp.yaml)
+- **gh dash**: GitHub CLI "dash" extension configuration (.config/gh-dash/config.yml)
 
 ## Usage
 
