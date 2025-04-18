@@ -7,11 +7,7 @@ This repository contains my personal dotfiles, managed with GNU Stow. These conf
 - [Git](https://git-scm.com)
 - [GNU Stow](https://www.gnu.org/software/stow/)
 - Zsh
-- [Vim](https://www.vim.org)
-- [Neovim](https://neovim.io)
-- [Oh My Posh](https://ohmyposh.dev/)
 - [Homebrew](https://brew.sh/)
-- [GitHub CLI](https://cli.github.com)
 
 ## Installation
 
@@ -36,34 +32,86 @@ brew install stow
 
 ```bash
 mkdir -p ~/dotfiles-backup
-cp -r ~/{.zshrc,.vimrc,.gitconfig,Brewfile,.config/nvim,.config/omp.yaml} ~/dotfiles-backup/ 2>/dev/null || echo \"Backup done\"
+cp -r ~/{.zshrc,.vimrc,.gitconfig,Brewfile,.config/nvim,.config/omp.yaml,.config/gh-dash} ~/dotfiles-backup/ 2>/dev/null || echo \"Backup done\"
 ```
 
 ### 4. Remove existing configuration files
 
 ```bash
 rm -f ~/.zshrc ~/.vimrc ~/.gitconfig ~/Brewfile
-rm -rf ~/.config/nvim ~/.config/omp.yaml
+rm -rf ~/.config/nvim ~/.config/omp.yaml ~/.config/gh-dash
 ```
 
 ### 5. Create symbolic links with Stow
 
 ```bash
 cd ~/dotfiles
-stow zsh vim git brew nvim omp
+stow zsh vim git brew nvim omp gh
+```
+
+Alternatively, to stow all packages at once, you can use:
+
+```bash
+cd ~/dotfiles
+for dir in */; do
+  stow "${dir%/}"
+done
+```
+
+### 6. Install required packages
+
+```bash
+brew bundle --file=~/dotfiles/brew/Brewfile
+```
+
+### 7. Set up Colima for Docker
+
+```bash
+brew services start colima
 ```
 
 ## What's Included
 
 This dotfiles repository includes configurations for:
 
-- **zsh**: Shell configuration (.zshrc)
+- **zsh**: Shell configuration (.zshrc) with aliases and environment setup
 - **vim**: Vim editor configuration (.vimrc)
-- **git**: Git configuration (.gitconfig)
+- **git**: Git configuration (.gitconfig) with useful aliases and settings
 - **brew**: Homebrew packages and settings (Brewfile)
-- **nvim**: Neovim configuration (.config/nvim)
+- **nvim**: Neovim configuration (.config/nvim) with plugins for LSP, completion, Git and more
 - **oh my posh**: Oh My Posh theme configuration (.config/omp.yaml)
 - **gh dash**: GitHub CLI "dash" extension configuration (.config/gh-dash/config.yml)
+
+## Key Features
+
+- **Neovim Configuration**:
+
+  - LSP support with autocomplete and diagnostics
+  - Treesitter for better syntax highlighting
+  - Git integration with fugitive and gitsigns
+  - Telescope for fuzzy finding
+  - DAP for debugging
+  - Project management and more
+
+- **GitHub Integration**:
+
+  - GitHub CLI configuration
+  - Dash for managing PRs and issues
+
+- **Development Environment**:
+
+  - Docker container support via Colima
+  - Language servers for multiple languages
+
+- **Zsh Enhancements**:
+
+  - Zinit for plugin management
+  - Useful aliases and functions
+  - Integration with fzf for fuzzy finding
+
+## Neovim Keymap
+
+A full keymap reference is available in [keymap.md](keymap.md).
 
 ## Usage
 

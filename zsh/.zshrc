@@ -2,6 +2,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export PATH=$PWD/node_modules/.bin:$PATH
 export HOMEBREW_NO_ANALYTICS=1
 
+export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
+
 if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
