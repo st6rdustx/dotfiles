@@ -32,21 +32,21 @@ brew install stow
 
 ```bash
 mkdir -p ~/dotfiles-backup
-cp -r ~/{.zshrc,.vimrc,.gitconfig,Brewfile,.config/nvim,.config/omp.yaml,.config/gh-dash} ~/dotfiles-backup/ 2>/dev/null || echo \"Backup done\"
+cp -r ~/{.zshrc,.vimrc,.gitconfig,Brewfile,.config/nvim,.config/omp.yaml,.config/gh-dash,.config/ghostty} ~/dotfiles-backup/ 2>/dev/null || echo \"Backup done\"
 ```
 
 ### 4. Remove existing configuration files
 
 ```bash
-rm -f ~/.zshrc ~/.vimrc ~/.gitconfig ~/Brewfile
-rm -rf ~/.config/nvim ~/.config/omp.yaml ~/.config/gh-dash
+rm -f ~/.zshrc ~/.vimrc ~/.gitconfig ~/.gitignore ~/Brewfile
+rm -rf ~/.config/nvim ~/.config/omp.yaml ~/.config/gh-dash ~/.config/ghostty
 ```
 
 ### 5. Create symbolic links with Stow
 
 ```bash
 cd ~/dotfiles
-stow zsh vim git brew nvim omp gh
+stow zsh vim git brew nvim omp gh ghostty
 ```
 
 Alternatively, to stow all packages at once, you can use:
@@ -81,6 +81,7 @@ This dotfiles repository includes configurations for:
 - **nvim**: Neovim configuration (.config/nvim) with plugins for LSP, completion, Git and more
 - **oh my posh**: Oh My Posh theme configuration (.config/omp.yaml)
 - **gh dash**: GitHub CLI "dash" extension configuration (.config/gh-dash/config.yml)
+- **ghostty**: Fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration configuration (.config/ghostty/config)
 
 ## Key Features
 
