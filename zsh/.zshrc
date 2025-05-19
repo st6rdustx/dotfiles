@@ -75,3 +75,5 @@ docker_rm_stopped() {
 eval $(thefuck --alias)
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
+
+export GPG_TTY=$(tty)

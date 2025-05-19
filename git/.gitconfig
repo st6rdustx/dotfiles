@@ -1,6 +1,7 @@
 [user]
 	name = d6stiny
-    email = 99969901+d6stiny@users.noreply.github.com
+	email = hello@diogocastro.me
+	signingkey = 094E1FD120C0F871
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
@@ -41,3 +42,9 @@
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
     helper = !/opt/homebrew/bin/gh auth git-credential
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[gpg]
+	program = gpg
