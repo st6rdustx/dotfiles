@@ -32,13 +32,13 @@ brew install stow
 
 ```bash
 mkdir -p ~/dotfiles-backup
-cp -r ~/{.zshrc,.vimrc,.gitconfig,Brewfile,.config/nvim,.config/omp.yaml,.config/gh-dash,.config/ghostty} ~/dotfiles-backup/ 2>/dev/null || echo \"Backup done\"
+cp -r ~/{.zshrc,.zprofile,.vimrc,.gitconfig,Brewfile,.config/nvim,.config/omp.yaml,.config/gh-dash,.config/ghostty} ~/dotfiles-backup/ 2>/dev/null || echo \"Backup done\"
 ```
 
 ### 4. Remove existing configuration files
 
 ```bash
-rm -f ~/.zshrc ~/.vimrc ~/.gitconfig ~/.gitignore ~/Brewfile
+rm -f ~/.zshrc ~/.zprofile ~/.vimrc ~/.gitconfig ~/.gitignore ~/Brewfile
 rm -rf ~/.config/nvim ~/.config/omp.yaml ~/.config/gh-dash ~/.config/ghostty
 ```
 

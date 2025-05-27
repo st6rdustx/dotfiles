@@ -51,7 +51,6 @@ alias f="open -a Finder"
 alias ls="eza"
 alias cat="bat"
 alias g="git"
-alias weather="curl v2d.wttr.in"
 
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --ansi --preview-window=right:60% --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 

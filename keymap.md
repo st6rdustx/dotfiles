@@ -88,7 +88,22 @@ This document provides a reference for all configured keymaps in my Neovim setup
 | `<S-Tab>`   | Insert | Select previous item or jump back in snippet |
 | `<Tab>`     | Insert | Accept Copilot suggestion line               |
 
+## Trouble.nvim
+
+| Keymap                   | Mode | Description |
+| ------------------------ | ---- | ----------- |
+| Uses default keybindings |      |             |
+
+## Which Key
+
+| Keymap     | Mode   | Description                |
+| ---------- | ------ | -------------------------- |
+| `<leader>` | Normal | Show available keybindings |
+
 ## Notes
 
 - Many of these keymaps depend on `<leader>` key, which is mapped to space.
 - Some keymaps are context-specific and only work in certain buffers or modes.
+- The configuration uses `which-key.nvim` to help remember and discover keybindings.
+- LSP keybindings may vary depending on the language server in use.
+- Copilot suggestion line acceptance uses `<Tab>` as configured in the copilot.lua plugin.
