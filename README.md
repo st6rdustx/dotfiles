@@ -58,7 +58,7 @@ for dir in */; do
 done
 ```
 
-### 6. Install required packages
+### 6. Install packages
 
 ```bash
 brew bundle --file=~/dotfiles/brew/Brewfile
