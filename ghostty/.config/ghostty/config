@@ -6,7 +6,6 @@ background-opacity = 0.95
 theme = Mathias
 font-size = 18
 font-family = Maple Mono
-macos-option-as-alt = true
 window-save-state = always
 macos-titlebar-style = tabs
 macos-icon = glass
