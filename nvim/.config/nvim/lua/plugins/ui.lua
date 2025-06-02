@@ -34,7 +34,7 @@ return {
           spelling = { enabled = true },
           presets = { operators = false },
         },
-        window = {
+        win = {
           border = "rounded",
           padding = { 2, 2, 2, 2 },
         },
