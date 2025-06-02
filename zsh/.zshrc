@@ -1,5 +1,8 @@
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH=$PWD/node_modules/.bin:$PATH
+export PATH="$PWD/node_modules/.bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export HOMEBREW_NO_ANALYTICS=1
 
 export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
@@ -68,7 +71,7 @@ ssh () {
 }
 
 docker_rm_stopped() {
-  docker rm $(docker ps -a -q)
+  docker rm $(docker ps -a -q -f status=exited)
 }
 
 eval $(thefuck --alias)
