@@ -71,7 +71,7 @@ ssh () {
 }
 
 docker_rm_stopped() {
-  docker rm $(docker ps -a -q -f status=exited)
+  docker rm $(docker ps -a -q)
 }
 
 eval $(thefuck --alias)
