@@ -1,8 +1,27 @@
-# Neovim Keymap Reference
+# Keymap Reference
 
-This document provides a reference for all configured keymaps in my Neovim setup.
+This document provides a reference for all configured keymaps in m setup.
 
-## General Navigation & Actions
+## Yabai Window Management
+
+| Keymap            | Description              |
+| ----------------- | ------------------------ |
+| `opt - t`         | Toggle window float      |
+| `opt - x`         | Close window             |
+| `opt + shift - h` | Swap window west         |
+| `opt + shift - j` | Swap window south        |
+| `opt + shift - k` | Swap window north        |
+| `opt + shift - l` | Swap window east         |
+| `opt + ctrl - h`  | Warp window west         |
+| `opt + ctrl - j`  | Warp window south        |
+| `opt + ctrl - k`  | Warp window north        |
+| `opt + ctrl - l`  | Warp window east         |
+| `opt - 1`         | Move window to display 1 |
+| `opt - 2`         | Move window to display 2 |
+
+## Neovim
+
+### General Navigation & Actions
 
 | Keymap      | Mode   | Description              |
 | ----------- | ------ | ------------------------ |
@@ -15,7 +34,7 @@ This document provides a reference for all configured keymaps in my Neovim setup
 | `<leader>p` | Visual | Paste over selected text |
 | `<leader>x` | Normal | Execute the current file |
 
-## LSP & Diagnostics
+### LSP & Diagnostics
 
 | Keymap        | Mode   | Description      |
 | ------------- | ------ | ---------------- |
@@ -23,7 +42,7 @@ This document provides a reference for all configured keymaps in my Neovim setup
 | `<leader>zig` | Normal | Restart LSP      |
 | `<leader>cx`  | Normal | Show diagnostics |
 
-## Telescope
+### Telescope
 
 | Keymap       | Mode   | Description                  |
 | ------------ | ------ | ---------------------------- |
@@ -31,7 +50,7 @@ This document provides a reference for all configured keymaps in my Neovim setup
 | `<leader>ff` | Normal | Live grep search             |
 | `<leader>fp` | Normal | Find projects                |
 
-## Buffer Management
+### Buffer Management
 
 | Keymap       | Mode   | Description     |
 | ------------ | ------ | --------------- |
@@ -39,7 +58,7 @@ This document provides a reference for all configured keymaps in my Neovim setup
 | `<leader>bn` | Normal | Next buffer     |
 | `<leader>bc` | Normal | Close buffer    |
 
-## Git
+### Git
 
 | Keymap       | Mode   | Description                                          |
 | ------------ | ------ | ---------------------------------------------------- |
@@ -50,7 +69,7 @@ This document provides a reference for all configured keymaps in my Neovim setup
 | `gu`         | Normal | Get diff from left side (//2) during merge conflict  |
 | `gh`         | Normal | Get diff from right side (//3) during merge conflict |
 
-## Commenting
+### Commenting
 
 | Keymap      | Mode             | Description                       |
 | ----------- | ---------------- | --------------------------------- |
@@ -63,7 +82,7 @@ This document provides a reference for all configured keymaps in my Neovim setup
 | `<leader>/` | Normal           | Toggle comment                    |
 | `<leader>/` | Visual           | Toggle comment                    |
 
-## Debugging
+### Debugging
 
 | Keymap       | Mode   | Description           |
 | ------------ | ------ | --------------------- |
@@ -76,7 +95,7 @@ This document provides a reference for all configured keymaps in my Neovim setup
 | `<leader>dl` | Normal | Run last debug config |
 | `<leader>du` | Normal | Toggle DAP UI         |
 
-## Completion
+### Completion
 
 | Keymap      | Mode   | Description                                  |
 | ----------- | ------ | -------------------------------------------- |
@@ -88,13 +107,13 @@ This document provides a reference for all configured keymaps in my Neovim setup
 | `<S-Tab>`   | Insert | Select previous item or jump back in snippet |
 | `<Tab>`     | Insert | Accept Copilot suggestion line               |
 
-## Trouble.nvim
+### Trouble.nvim
 
 | Keymap                   | Mode | Description |
 | ------------------------ | ---- | ----------- |
 | Uses default keybindings |      |             |
 
-## Which Key
+### Which Key
 
 | Keymap     | Mode   | Description                |
 | ---------- | ------ | -------------------------- |
