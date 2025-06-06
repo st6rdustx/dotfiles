@@ -22,20 +22,24 @@ yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 
 # space 1
-yabai -m rule --add app="Safari" space=^1
+yabai -m space 1 --label web
+yabai -m rule --add app="Safari" space=web
 
 # space 2: development
-yabai -m rule --add app="Code" space=^2
-yabai -m rule --add app="Visual Studio Code" space=^2
-yabai -m rule --add app="Ghostty" space=^2
+yabai -m space 2 --label dev
+yabai -m rule --add app="Code" space=dev
+yabai -m rule --add app="Visual Studio Code" space=dev
+yabai -m rule --add app="Ghostty" space=dev
 
 # space 3: out of the way thingys
+yabai -m space 3 --label misc
 yabai -m space 3 --layout stack
-yabai -m rule --add app="Mail" space=^3
-yabai -m rule --add app="Slack" space=^3
-yabai -m rule --add app="Discord" space=^3
-yabai -m rule --add app="Music" space=^3
-yabai -m rule --add app="Podcasts" space=^3
+yabai -m rule --add app="Mail" space=misc
+yabai -m rule --add app="Slack" space=misc
+yabai -m rule --add app="Discord" space=misc
+yabai -m rule --add app="Music" space=misc
+yabai -m rule --add app="Podcasts" space=misc
+yabai -m rule --add app="WhatsApp" space=misc
 
 # things that should not be managed by yabai
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension|Profile)s|AutoFill|Se(arch|curity)|Privacy|Advanced|Developer|Feature Flags)$" manage=off
