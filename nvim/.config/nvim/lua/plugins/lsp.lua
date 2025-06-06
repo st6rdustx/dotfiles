@@ -16,21 +16,19 @@ return {
 
       mason_lspconfig.setup {
         ensure_installed = {
-          "lua_ls",
-          "bashls",
-          "dockerls",
-          "docker_compose_language_service",
-          "jsonls",
-          "tsserver",
-          "mdx_analyzer",
+          "ts_ls",
           "yamlls",
+          "jsonls",
+          "bashls",
+          "lua_ls",
+          "dockerls",
         },
       }
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      local lspconfig = require("lspconfig")
-      
+      local lspconfig = require "lspconfig"
+
       for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
         if server_name == "yamlls" then
           lspconfig.yamlls.setup {
@@ -44,7 +42,6 @@ return {
             },
           }
         elseif server_name == "jsonls" then
-
           lspconfig.jsonls.setup {
             capabilities = capabilities,
             settings = {
@@ -72,6 +69,16 @@ return {
           }
         end
       end
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        ensure_installed = "all",
+        highlight = { enable = true },
+      }
     end,
   },
 }

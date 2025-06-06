@@ -21,103 +21,321 @@ This document provides a reference for all configured keymaps in m setup.
 
 ## Neovim
 
-### General Navigation & Actions
+### Leader Key
 
-| Keymap      | Mode   | Description              |
-| ----------- | ------ | ------------------------ |
-| `<left>`    | Normal | Navigate to previous tab |
-| `<right>`   | Normal | Navigate to next tab     |
-| `<M-,>`     | Normal | Decrease window width    |
-| `<M-.>`     | Normal | Increase window width    |
-| `<M-t>`     | Normal | Increase window height   |
-| `<M-s>`     | Normal | Decrease window height   |
-| `<leader>p` | Visual | Paste over selected text |
-| `<leader>x` | Normal | Execute the current file |
+- **Leader key**: `<Space>`
 
-### LSP & Diagnostics
+### Core Navigation & Editing
 
-| Keymap        | Mode   | Description      |
-| ------------- | ------ | ---------------- |
-| `<leader>gd`  | Normal | Go to definition |
-| `<leader>zig` | Normal | Restart LSP      |
-| `<leader>cx`  | Normal | Show diagnostics |
+#### Window Management
 
-### Telescope
+| Keymap       | Mode   | Description               |
+| ------------ | ------ | ------------------------- |
+| `<C-h>`      | Normal | Move to left window       |
+| `<C-j>`      | Normal | Move to down window       |
+| `<C-k>`      | Normal | Move to up window         |
+| `<C-l>`      | Normal | Move to right window      |
+| `<leader>sv` | Normal | Split window vertically   |
+| `<leader>sh` | Normal | Split window horizontally |
+| `<leader>se` | Normal | Make splits equal size    |
+| `<leader>sx` | Normal | Close current split       |
 
-| Keymap       | Mode   | Description                  |
-| ------------ | ------ | ---------------------------- |
-| `<leader>fb` | Normal | Fuzzy find in current buffer |
-| `<leader>ff` | Normal | Live grep search             |
-| `<leader>fp` | Normal | Find projects                |
+#### Tab Management
 
-### Buffer Management
+| Keymap       | Mode   | Description                    |
+| ------------ | ------ | ------------------------------ |
+| `<leader>to` | Normal | Open new tab                   |
+| `<leader>tx` | Normal | Close current tab              |
+| `<leader>tn` | Normal | Go to next tab                 |
+| `<leader>tp` | Normal | Go to previous tab             |
+| `<leader>tf` | Normal | Open current buffer in new tab |
 
-| Keymap       | Mode   | Description     |
-| ------------ | ------ | --------------- |
-| `<leader>bp` | Normal | Previous buffer |
-| `<leader>bn` | Normal | Next buffer     |
-| `<leader>bc` | Normal | Close buffer    |
+#### Buffer Management
 
-### Git
+| Keymap       | Mode   | Description                |
+| ------------ | ------ | -------------------------- |
+| `<Tab>`      | Normal | Next buffer                |
+| `<S-Tab>`    | Normal | Previous buffer            |
+| `<leader>bd` | Normal | Delete buffer              |
+| `<leader>bD` | Normal | Force delete buffer        |
+| `<leader>bp` | Normal | Pick buffer                |
+| `<leader>bP` | Normal | Close pick buffer          |
+| `<leader>bo` | Normal | Close all other buffers    |
+| `<leader>br` | Normal | Close buffers to the right |
+| `<leader>bl` | Normal | Close buffers to the left  |
+| `<S-l>`      | Normal | Move to next buffer        |
+| `<S-h>`      | Normal | Move to previous buffer    |
 
-| Keymap       | Mode   | Description                                          |
-| ------------ | ------ | ---------------------------------------------------- |
-| `<leader>gs` | Normal | Open Git status                                      |
-| `<leader>p`  | Normal | Git push (in fugitive buffer)                        |
-| `<leader>P`  | Normal | Git pull with rebase (in fugitive buffer)            |
-| `<leader>t`  | Normal | Git push with upstream tracking (in fugitive buffer) |
-| `gu`         | Normal | Get diff from left side (//2) during merge conflict  |
-| `gh`         | Normal | Get diff from right side (//3) during merge conflict |
+#### Basic Editing
 
-### Commenting
+| Keymap       | Mode   | Description             |
+| ------------ | ------ | ----------------------- |
+| `<leader>nh` | Normal | Clear search highlights |
+| `<leader>+`  | Normal | Increment number        |
+| `<leader>-`  | Normal | Decrement number        |
+| `<leader>w`  | Normal | Save file               |
+| `<leader>q`  | Normal | Quit                    |
+| `<leader>x`  | Normal | Save and quit           |
+| `J`          | Normal | Move line down          |
+| `K`          | Normal | Move line up            |
+| `>`          | Normal | Indent line             |
+| `<`          | Normal | Unindent line           |
 
-| Keymap      | Mode             | Description                       |
-| ----------- | ---------------- | --------------------------------- |
-| `gcc`       | Normal           | Comment toggle current line       |
-| `gc`        | Normal, Operator | Comment toggle linewise           |
-| `gc`        | Visual           | Comment toggle linewise (visual)  |
-| `gbc`       | Normal           | Comment toggle current block      |
-| `gb`        | Normal, Operator | Comment toggle blockwise          |
-| `gb`        | Visual           | Comment toggle blockwise (visual) |
-| `<leader>/` | Normal           | Toggle comment                    |
-| `<leader>/` | Visual           | Toggle comment                    |
+### Fuzzy Finder (Snacks.nvim & Telescope)
 
-### Debugging
+#### File & Content Search
 
-| Keymap       | Mode   | Description           |
-| ------------ | ------ | --------------------- |
-| `<leader>db` | Normal | Toggle breakpoint     |
-| `<leader>dc` | Normal | Start/Continue debug  |
-| `<leader>di` | Normal | Step into             |
-| `<leader>do` | Normal | Step over             |
-| `<leader>dO` | Normal | Step out              |
-| `<leader>dr` | Normal | Open REPL             |
-| `<leader>dl` | Normal | Run last debug config |
-| `<leader>du` | Normal | Toggle DAP UI         |
+| Keymap       | Mode   | Description                    |
+| ------------ | ------ | ------------------------------ |
+| `<leader>ff` | Normal | Find files                     |
+| `<leader>fg` | Normal | Live grep                      |
+| `<leader>fb` | Normal | Buffers                        |
+| `<leader>fh` | Normal | Help tags                      |
+| `<leader>fr` | Normal | Recent files                   |
+| `<leader>fc` | Normal | Colorschemes                   |
+| `<leader>fs` | Normal | Current buffer fuzzy find      |
+| `<leader>fw` | Normal | Grep word under cursor         |
+| `<leader>fW` | Normal | Grep WORD under cursor         |
+| `<leader>fl` | Normal | Resume last search             |
+| `<leader>fd` | Normal | Diagnostics                    |
+| `<leader>fq` | Normal | Quickfix                       |
+| `<leader>fm` | Normal | Marks                          |
+| `<leader>fk` | Normal | Keymaps                        |
+| `<leader>fo` | Normal | Vim options                    |
+| `<leader>fp` | Normal | Projects                       |
+| `<leader>fz` | Normal | Fuzzy find in current buffer   |
+| `<leader>fn` | Normal | Find in notes                  |
+| `<leader>fN` | Normal | New note                       |
+| `<leader>ft` | Normal | TODOs                          |
+| `<leader>fT` | Normal | TODO/FIX/etc in current buffer |
 
-### Completion
+#### Git Files
 
-| Keymap      | Mode   | Description                                  |
-| ----------- | ------ | -------------------------------------------- |
-| `<C-p>`     | Insert | Select previous item in completion menu      |
-| `<C-n>`     | Insert | Select next item in completion menu          |
-| `<C-y>`     | Insert | Confirm selection in completion menu         |
-| `<C-Space>` | Insert | Complete                                     |
-| `<Tab>`     | Insert | Select next item or expand snippet           |
-| `<S-Tab>`   | Insert | Select previous item or jump back in snippet |
-| `<Tab>`     | Insert | Accept Copilot suggestion line               |
+| Keymap       | Mode   | Description |
+| ------------ | ------ | ----------- |
+| `<leader>gf` | Normal | Git files   |
+| `<leader>gc` | Normal | Git commits |
+| `<leader>gt` | Normal | Git status  |
 
-### Trouble.nvim
+### LSP (Language Server Protocol)
 
-| Keymap                   | Mode | Description |
-| ------------------------ | ---- | ----------- |
-| Uses default keybindings |      |             |
+#### Navigation
 
-### Which Key
+| Keymap | Mode   | Description           |
+| ------ | ------ | --------------------- |
+| `gd`   | Normal | Go to definition      |
+| `gD`   | Normal | Go to declaration     |
+| `gr`   | Normal | Go to references      |
+| `gi`   | Normal | Go to implementation  |
+| `gt`   | Normal | Go to type definition |
 
-| Keymap     | Mode   | Description                |
-| ---------- | ------ | -------------------------- |
-| `<leader>` | Normal | Show available keybindings |
+#### Information
+
+| Keymap      | Mode   | Description           |
+| ----------- | ------ | --------------------- |
+| `K`         | Normal | Hover documentation   |
+| `<C-k>`     | Insert | Signature help        |
+| `<leader>D` | Normal | Show line diagnostics |
+
+#### Code Actions
+
+| Keymap       | Mode   | Description   |
+| ------------ | ------ | ------------- |
+| `<leader>rn` | Normal | Rename symbol |
+| `<leader>ca` | Normal | Code action   |
+| `<leader>f`  | Normal | Format buffer |
+| `<leader>rs` | Normal | Restart LSP   |
+
+#### Diagnostics Navigation
+
+| Keymap      | Mode   | Description         |
+| ----------- | ------ | ------------------- |
+| `[d`        | Normal | Previous diagnostic |
+| `]d`        | Normal | Next diagnostic     |
+| `<leader>q` | Normal | Set location list   |
+
+### Git Integration (Fugitive)
+
+| Keymap       | Mode   | Description          |
+| ------------ | ------ | -------------------- |
+| `<leader>gs` | Normal | Git status (:Git)    |
+| `<leader>gv` | Normal | Git vertical split   |
+| `<leader>gh` | Normal | Git horizontal split |
+| `<leader>gb` | Normal | Git blame            |
+| `<leader>gd` | Normal | Git diff             |
+| `<leader>gl` | Normal | Git log              |
+| `<leader>gp` | Normal | Git push             |
+| `<leader>gP` | Normal | Git pull             |
+
+### Debugging (DAP)
+
+#### Debug Control
+
+| Keymap       | Mode   | Description              |
+| ------------ | ------ | ------------------------ |
+| `<F5>`       | Normal | Continue/Start debugging |
+| `<F10>`      | Normal | Step over                |
+| `<F11>`      | Normal | Step into                |
+| `<F12>`      | Normal | Step out                 |
+| `<leader>dt` | Normal | Terminate debugging      |
+
+#### Breakpoints
+
+| Keymap       | Mode   | Description                |
+| ------------ | ------ | -------------------------- |
+| `<leader>b`  | Normal | Toggle breakpoint          |
+| `<leader>B`  | Normal | Set conditional breakpoint |
+| `<leader>lp` | Normal | Log point                  |
+
+#### Debug UI
+
+| Keymap       | Mode   | Description            |
+| ------------ | ------ | ---------------------- |
+| `<leader>dr` | Normal | Open REPL              |
+| `<leader>dl` | Normal | Run last debug session |
+| `<leader>dh` | Normal | Hover variables        |
+| `<leader>dp` | Normal | Preview variables      |
+| `<leader>df` | Normal | Frames                 |
+| `<leader>ds` | Normal | Scopes                 |
+
+### Terminal
+
+| Keymap       | Mode   | Description         |
+| ------------ | ------ | ------------------- |
+| `<leader>tt` | Normal | Toggle terminal     |
+| `<leader>th` | Normal | Horizontal terminal |
+| `<leader>tv` | Normal | Vertical terminal   |
+| `<leader>tf` | Normal | Float terminal      |
+| `<C-/>`      | Normal | Toggle terminal     |
+
+### Comments (Comment.nvim)
+
+#### Normal Mode
+
+| Keymap | Mode                 | Description          |
+| ------ | -------------------- | -------------------- |
+| `gcc`  | Normal               | Toggle line comment  |
+| `gbc`  | Normal               | Toggle block comment |
+| `gc`   | Normal (with motion) | Line comment         |
+| `gb`   | Normal (with motion) | Block comment        |
+
+#### Visual Mode
+
+| Keymap | Mode   | Description          |
+| ------ | ------ | -------------------- |
+| `gc`   | Visual | Toggle line comment  |
+| `gb`   | Visual | Toggle block comment |
+
+### Completion (nvim-cmp)
+
+| Keymap      | Mode   | Description                         |
+| ----------- | ------ | ----------------------------------- |
+| `<C-b>`     | Insert | Scroll docs backward                |
+| `<C-f>`     | Insert | Scroll docs forward                 |
+| `<C-Space>` | Insert | Complete                            |
+| `<C-e>`     | Insert | Close completion                    |
+| `<CR>`      | Insert | Confirm selection                   |
+| `<Tab>`     | Insert | Next item/expand snippet            |
+| `<S-Tab>`   | Insert | Previous item/jump snippet backward |
+
+### Copilot
+
+#### Insert Mode
+
+| Keymap  | Mode   | Description         |
+| ------- | ------ | ------------------- |
+| `<M-]>` | Insert | Next suggestion     |
+| `<M-[>` | Insert | Previous suggestion |
+| `<C-]>` | Insert | Dismiss suggestion  |
+
+#### Normal Mode
+
+| Keymap       | Mode   | Description   |
+| ------------ | ------ | ------------- |
+| `<leader>cp` | Normal | Copilot panel |
+
+### File Explorer & Project Management
+
+| Keymap       | Mode   | Description          |
+| ------------ | ------ | -------------------- |
+| `<leader>e`  | Normal | Toggle file explorer |
+| `<leader>pf` | Normal | Find project files   |
+| `<leader>pp` | Normal | Recent projects      |
+| `<leader>pa` | Normal | Add project          |
+| `<leader>pd` | Normal | Delete project       |
+| `<leader>ps` | Normal | Search in project    |
+| `<leader>pb` | Normal | Browse project       |
+
+### Productivity & Utilities
+
+#### Quick Actions
+
+| Keymap       | Mode   | Description                 |
+| ------------ | ------ | --------------------------- |
+| `<leader>ur` | Normal | Toggle relative numbers     |
+| `<leader>ul` | Normal | Toggle line numbers         |
+| `<leader>uw` | Normal | Toggle word wrap            |
+| `<leader>us` | Normal | Toggle spell check          |
+| `<leader>un` | Normal | Toggle notifications        |
+| `<leader>ui` | Normal | Toggle indent guides        |
+| `<leader>uc` | Normal | Toggle concealer            |
+| `<leader>uh` | Normal | Toggle inlay hints          |
+| `<leader>uT` | Normal | Toggle treesitter highlight |
+| `<leader>ub` | Normal | Toggle background           |
+| `<leader>ud` | Normal | Toggle diagnostics          |
+| `<leader>uf` | Normal | Toggle format on save       |
+
+#### Zen Mode & Focus
+
+| Keymap      | Mode   | Description     |
+| ----------- | ------ | --------------- |
+| `<leader>z` | Normal | Toggle zen mode |
+| `<leader>Z` | Normal | Toggle zoom     |
+
+#### Notifications & Dashboard
+
+| Keymap       | Mode   | Description               |
+| ------------ | ------ | ------------------------- |
+| `<leader>un` | Normal | Dismiss all notifications |
+| `<leader>nh` | Normal | Show notification history |
+| `<leader>nd` | Normal | Show dashboard            |
+
+### Text Objects & Motions
+
+#### Custom Text Objects
+
+- `ii` / `ai` - Indent text object
+- `if` / `af` - Function text object
+- `ic` / `ac` - Class text object
+- `i,` / `a,` - Argument text object
+
+#### Quick Navigation
+
+| Keymap  | Mode   | Description       |
+| ------- | ------ | ----------------- |
+| `<C-u>` | Normal | Half page up      |
+| `<C-d>` | Normal | Half page down    |
+| `gg`    | Normal | Go to top         |
+| `G`     | Normal | Go to bottom      |
+| `0`     | Normal | Beginning of line |
+| `$`     | Normal | End of line       |
+
+### Visual Mode Enhancements
+
+| Keymap | Mode   | Description           |
+| ------ | ------ | --------------------- |
+| `J`    | Visual | Move selection down   |
+| `K`    | Visual | Move selection up     |
+| `>`    | Visual | Indent selection      |
+| `<`    | Visual | Unindent selection    |
+| `p`    | Visual | Paste without yanking |
+
+### Command Mode
+
+| Keymap  | Mode    | Description                 |
+| ------- | ------- | --------------------------- |
+| `<C-j>` | Command | Next command in history     |
+| `<C-k>` | Command | Previous command in history |
 
 ## Notes
 

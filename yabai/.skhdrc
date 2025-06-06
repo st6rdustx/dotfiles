@@ -1,4 +1,5 @@
-alt - t : yabai -m window --toggle float
+# basic window management
+alt - t : yabai -m window --toggle float # toggle floating window
 
 # send window to monitor and focus
 alt + shift - 1 : yabai -m window --display 1 --focus
