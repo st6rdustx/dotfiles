@@ -33,15 +33,14 @@ yabai -m rule --add app="Ghostty" space=dev
 yabai -m signal --add app="^Ghostty$" event=window_created action="yabai -m space --layout bsp"
 yabai -m signal --add app="^Ghostty$" event=window_destroyed action="yabai -m space --layout bsp"
 
-# space 3: out of the way thingys
-yabai -m space 3 --label misc
+# space 3: Communication and media
+yabai -m space 3 --label comms
 yabai -m space 3 --layout stack
-yabai -m rule --add app="Mail" space=misc
-yabai -m rule --add app="Slack" space=misc
-yabai -m rule --add app="Discord" space=misc
-yabai -m rule --add app="Music" space=misc
-yabai -m rule --add app="Podcasts" space=misc
-yabai -m rule --add app="WhatsApp" space=misc
+yabai -m rule --add app="Mail" space=comms
+yabai -m rule --add app="Discord" space=comms
+yabai -m rule --add app="WhatsApp" space=comms
+yabai -m rule --add app="Music" space=comms
+yabai -m rule --add app="Podcasts" space=comms
 
 # space 4: games
 yabai -m space 4 --label games
