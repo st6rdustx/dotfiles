@@ -30,6 +30,8 @@ yabai -m space 2 --label dev
 yabai -m rule --add app="Code" space=dev
 yabai -m rule --add app="Visual Studio Code" space=dev
 yabai -m rule --add app="Ghostty" space=dev
+yabai -m signal --add app="^Ghostty$" event=window_created action="yabai -m space --layout bsp"
+yabai -m signal --add app="^Ghostty$" event=window_destroyed action="yabai -m space --layout bsp"
 
 # space 3: out of the way thingys
 yabai -m space 3 --label misc
@@ -41,9 +43,20 @@ yabai -m rule --add app="Music" space=misc
 yabai -m rule --add app="Podcasts" space=misc
 yabai -m rule --add app="WhatsApp" space=misc
 
+# space 4: games
+yabai -m space 4 --label games
+yabai -m space 4 --layout stack
+yabai -m rule --add app="Steam" space=games
+yabai -m rule --add app="NVIDIA GeForce NOW" space=games
+yabai -m rule --add app="GeForce NOW" space=games
+yabai -m rule --add app="Games" space=games
+yabai -m rule --add app="Roblox" space=games
+
 # things that should not be managed by yabai
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension|Profile)s|AutoFill|Se(arch|curity)|Privacy|Advanced|Developer|Feature Flags)$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="System Settings" manage=off
 yabai -m rule --add label="Software Update" title="Software Update" manage=off
 yabai -m rule --add label="FaceTime" app="^FaceTime$" title="^FaceTime$" manage=off
+yabai -m rule --add app="^1Password$" manage=off
+yabai -m rule --add app="^Find My$" manage=off
