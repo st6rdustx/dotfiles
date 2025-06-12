@@ -1,7 +1,7 @@
 [user]
 	name = Diogo
-	email = diogo@meeows.net
-	signingkey = 414F6427008E0945
+	email = hi@diogo.wtf
+	signingkey = 5ADDAABC8EA34D05
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true

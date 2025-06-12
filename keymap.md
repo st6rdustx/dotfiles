@@ -1,23 +1,6 @@
 # Keymap Reference
 
-This document provides a reference for all configured keymaps in m setup.
-
-## Yabai Window Management
-
-| Keymap            | Description              |
-| ----------------- | ------------------------ |
-| `opt - t`         | Toggle window float      |
-| `opt - x`         | Close window             |
-| `opt + shift - h` | Swap window west         |
-| `opt + shift - j` | Swap window south        |
-| `opt + shift - k` | Swap window north        |
-| `opt + shift - l` | Swap window east         |
-| `opt + ctrl - h`  | Warp window west         |
-| `opt + ctrl - j`  | Warp window south        |
-| `opt + ctrl - k`  | Warp window north        |
-| `opt + ctrl - l`  | Warp window east         |
-| `opt - 1`         | Move window to display 1 |
-| `opt - 2`         | Move window to display 2 |
+This document provides a reference for all configured keymaps in my setup.
 
 ## Neovim
 
